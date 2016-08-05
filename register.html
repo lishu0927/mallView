@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hello MUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="mui/css/app.css">
+    <link rel="stylesheet" type="text/css" href="mui/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="layer.m/need/layer.css">
+    <script src="layer.m/layer.m.js"></script>
+    <style>
+        .mui-input-group:before,.mui-input-group:after,
+        .mui-input-row:after{
+            display:none;
+        }
+        .mui-input-group .mui-input-row {
+            height: auto;
+            margin: 5px 10px 5px 0;
+        }
+        .mui-input-group {
+            padding: 20px 10px;
+        }
+        .mui-input-row input{
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 86%;
+            color: #a8a8a8;
+            margin-left: 7%;
+        }
+        .mui-yz-row{
+            margin: 10px 7%;
+        }
+        .mui-yz-row input{
+            width: 60%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            color: #a8a8a8;
+        }
+        .mui-yz-row img{
+            width: 80px;
+            height: 40px;
+            background-color: #cdcdcd;
+            vertical-align: middle;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .mui-btn-block {
+            padding:7px 0;
+            width: 92%;
+            margin-left: 4%;
+        }
+        a{
+            color: #9d9d9d;
+        }
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">注册</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-input-group" >
+        <div class="mui-input-row">
+            <input name="name" type="text" placeholder="用户名" id="re-name">
+        </div>
+        <div class="mui-input-row">
+            <input name="pwd" type="text" placeholder="密码" id="re-pwd">
+        </div>
+        <div class="mui-input-row">
+            <input name="pwd2" type="text" placeholder="确认密码" id="re-pwd2">
+        </div>
+        <div class="mui-yz-row">
+            <input type="text" name="re-verify" placeholder="验证码"  id="re-yz">
+            <img src="images/yzm.png" alt="">
+        </div>
+        <div style="margin-top:20px;">
+            <button id="login" onclick="register()" class="mui-btn mui-btn-success mui-btn-block">立即注册</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script src="mui/js/mui.min.js"></script>
+<script>
+    function msg(msg){
+        layer.open({
+            content: msg,
+            style:'text-align: center;color:#000;',
+            time: 1
+        });
+    }
+    function register(){
+        var nickname = $('#re-name').val();
+        var pwd = $('#re-pwd').val();
+        var pwd2 = $('#re-pwd2').val();
+        if (nickname==''||pwd==''||pwd2=='') {
+            msg('用户名和密码不能为空！');
+        }else if(pwd!=pwd2){
+            msg('l两次输入的密码不一致！');
+        } else {
+            msg('注册成功！');
+            setTimeout(function () {
+                window.location.href = "login.html";
+            }, 1000);
+        }
+    }
+</script>
+</body>
+</html>

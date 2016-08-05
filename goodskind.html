@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>购物商城</title>
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="mui/css/app.css">
+    <link rel="stylesheet" type="text/css" href="mui/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="layer.m/need/layer.css">
+    <script src="layer.m/layer.m.js"></script>
+    <style>
+        html,body{
+            background-color: #fff;
+        }
+        .mui-card .mui-control-content {
+            padding: 10px;
+        }
+        .mui-segmented-control .mui-control-item.mui-active{
+            background-color: #84c125;
+        }
+        .mui-segmented-control .mui-control-item{
+            border-left: 1px solid  #84c125;
+            color:#84c125 ;
+        }
+        .mui-segmented-control{
+            border: 1px solid  #84c125;
+        }
+        .mui-table-view li a img{
+            width: 80%;
+        }
+        a{
+            color: #b2b2b2;
+        }
+        .cart{
+            background: url("images/new_icon.png") no-repeat scroll center center / 180px auto;
+            background-position: 2px -61px;
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            margin-top: 3px;
+            position: fixed;
+            top: 5px;
+            right: 15px;
+        }
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a href="javascript:history.go(-1);" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">商品分类</h1>
+    <a href="gouwuche.html">
+        <span class="cart"></span>
+    </a>
+</header>
+<div class="mui-content">
+    <div style="padding: 10px 10px;">
+        <div id="segmentedControl" class="mui-segmented-control">
+            <a class="mui-control-item mui-active" href="#item1">
+                服饰
+            </a>
+            <a class="mui-control-item" href="#item2">
+                护肤
+            </a>
+            <a class="mui-control-item" href="#item3">
+                鞋包
+            </a>
+        </div>
+    </div>
+    <div>
+        <div id="item1" class="mui-control-content mui-active">
+            <ul class="mui-table-view mui-grid-view">
+                <li class='mui-table-view-cell mui-media mui-col-xs-6'>
+                    <a href="chanpin_xx.html">
+                        <img src="images/img/1.jpg">
+                        <p><span style='color: #ffab09;'>¥126.00</span>&nbsp;&nbsp;  <del>¥169.00</del></p>
+                        <p class='mui-media-body'>乐町连衣裙</p>
+                    </a>
+                </li>
+                <li class='mui-table-view-cell mui-media mui-col-xs-6'>
+                    <a href="chanpin_xx.html">
+                        <img src="images/img/2.jpg">
+                        <p><span style='color: #ffab09;'>¥126.00</span>&nbsp;&nbsp;  <del>¥169.00</del></p>
+                        <p class='mui-media-body'>乐町连衣裙</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="item2" class="mui-control-content">
+            <ul class="mui-table-view mui-grid-view">
+                <li class='mui-table-view-cell mui-media mui-col-xs-6'>
+                    <a href="chanpin_xx.html">
+                        <img src="images/img/7.jpg">
+                        <p><span style='color: #ffab09;'>¥126.00</span>&nbsp;&nbsp;  <del>¥169.00</del></p>
+                        <p class='mui-media-body'>乐町连衣裙</p>
+                    </a>
+                </li>
+                <li class='mui-table-view-cell mui-media mui-col-xs-6'>
+                    <a href="chanpin_xx.html">
+                        <img src="images/img/8.jpg">
+                        <p><span style='color: #ffab09;'>¥126.00</span>&nbsp;&nbsp;  <del>¥169.00</del></p>
+                        <p class='mui-media-body'>乐町连衣裙</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="item3" class="mui-control-content">
+            <ul class="mui-table-view mui-grid-view">
+                <li class='mui-table-view-cell mui-media mui-col-xs-6'>
+                    <a href="chanpin_xx.html">
+                        <img src="images/img/13.jpg">
+                        <p><span style='color: #ffab09;'>¥126.00</span>&nbsp;&nbsp;  <del>¥169.00</del></p>
+                        <p class='mui-media-body'>乐町连衣裙</p>
+                    </a>
+                </li>
+                <li class='mui-table-view-cell mui-media mui-col-xs-6'>
+                    <a href="chanpin_xx.html">
+                        <img src="images/img/14.jpg">
+                        <p><span style='color: #ffab09;'>¥126.00</span>&nbsp;&nbsp;  <del>¥169.00</del></p>
+                        <p class='mui-media-body'>乐町连衣裙</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="mui/js/mui.min.js"></script>
+
+
+</body>
+
+</html>

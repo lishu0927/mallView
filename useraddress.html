@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>会员信息完善</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="mui/css/mui.min.css">
+	<link rel="stylesheet" type="text/css" href="mui/css/app.css" />
+	<link href="mui/css/mui.picker.css" rel="stylesheet" />
+	<link href="mui/css/mui.poppicker.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="layer.m/need/layer.css">
+	<script src="layer.m/layer.m.js"></script>
+	<style>
+		html,body{
+			background-color: #fff;
+		}
+		h5 {
+			margin: 5px 7px;
+		}
+		a{
+			color: #9d9d9d;
+		}
+		.mui-input-row label{
+			width:100px;
+			text-align: right;
+			position: absolute;
+		}
+		.mui-input-row label~input,.mui-input-row label~textarea{
+			width: 100%;
+			padding-left: 100px;
+		}
+		.mui-input-group .mui-input-row {
+			height: auto;
+		}
+		.mui-input-group:after{
+			display: none;
+		}
+		.mui-button-row{
+			margin: 20px 0;
+		}
+		.mui-btn, button, input[type=button], input[type=reset], input[type=submit]{
+			width: 45%;
+			padding: 8px 12px;
+			font-size: 16px;
+		}
+		.mui-btn-primary{
+			border: 1px solid #ddd;
+			background-color: #ddd;
+		}
+		.mui-btn-primary:enabled:active
+		{
+			color: #fff;
+			border: 1px solid #cecece;
+			background-color: #b6b6b6;
+		}
+	</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">请填写收货地址</h1>
+	</header>
+	<div class="mui-content">
+		<div style="text-indent:15px;font-size: 14px; color: #0BB20C; margin: 10px 0">请设置默认收货地址</div>
+		<form class="mui-input-group">
+			<div class="mui-input-row">
+				<label>姓名</label>
+				<input type="text" value="" id="name" class="mui-input-clear" placeholder="请输入姓名">
+			</div>
+			<div class="mui-input-row">
+				<label>手机</label>
+				<input type="tel" value="" id="tel" class="mui-input-clear" placeholder="请输入手机号">
+			</div>
+			<div class="mui-input-row">
+				<label>收货地址</label>
+				<input type="text" value="" id='address'  placeholder="选择收货地址">
+				<textarea id="addressinfo" style="display:none" rows="1" placeholder="具体地址"></textarea>
+			</div>
+			<div class="mui-button-row">
+				<p id="url" style="display: none"><{$url}></p>
+				<button type="button" class="mui-btn mui-btn-primary" onclick="javascript:history.go(-1);" >取消</button>
+				<button type="button" id="sub" class="mui-btn mui-btn-success" onclick="return false;">确认</button>&nbsp;&nbsp;
+			</div>
+		</form>
+	</div>
+</body>
+<script src="mui/js/mui.min.js"></script>
+<script src="mui/js/mui.picker.js"></script>
+<script src="mui/js/mui.poppicker.js"></script>
+<script src="mui/js/city.data.js" type="text/javascript" charset="utf-8"></script>
+<script src="mui/js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	(function($, doc) {
+		$.init();
+		$.ready(function() {
+			var cityPicker3 = new $.PopPicker({
+				layer: 3
+			});
+			cityPicker3.setData(cityData3);
+			var showCityPickerButton = doc.getElementById('address');
+			var cityResult3 = doc.getElementById('cityResult3');
+			showCityPickerButton.addEventListener('click', function(event) {
+				cityPicker3.show(function(items) {
+					showCityPickerButton.value = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+					//返回 false 可以阻止选择框的关闭
+					//return false;
+				});
+			}, false);
+		});
+	})(mui, document);
+</script>
+<script>
+	$("#address").blur(function(){
+		setTimeout(function(){
+			$('#addressinfo').css('display','block');
+		},300)
+	});
+	function msg(msg){
+		layer.open({
+			content: msg,
+			style:'text-align: center;color:#000;',
+			time: 2
+		});
+	}
+	$("#sub").click(function(){
+		var url=$('#url').text();
+		url=url.replace(/\*/g,'/');
+		var name=$("#name").val();
+		var tel=$("#tel").val();
+		var address=$("#address").val();
+		var addressinfo=$("#addressinfo").val();
+		if(!(/^1[3|4|5|7|8]\d{9}$/.test(tel))){
+			msg("手机号码有误，请重填");
+			return false;
+		}else if(name==''||tel==''||address==''||addressinfo==''){
+			msg('请填写完整信息');
+			return false;
+		}else{
+			msg("修改成功");
+			setTimeout(function(){
+				window.location.href="jiesuan.html";
+			},1000);
+		}
+
+	})
+</script>
+</html>

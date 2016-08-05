@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>购物商城</title>
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="mui/css/app.css">
+    <link rel="stylesheet" type="text/css" href="mui/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="layer.m/need/layer.css">
+    <script src="layer.m/layer.m.js"></script>
+    <style>
+        html,body{
+            background-color:#fff;
+        }
+        .mui-content {
+            margin-bottom: 60px;
+        }
+        .mui-bar {
+            background-color:#84c125 ;
+        }
+        .mui-bar .mui-icon {
+            font-size: 40px;
+            padding-top: 0;
+            padding-bottom: 10px;
+        }
+        input[type=text] {
+            margin: 10px 10%;
+        }
+        #searchbtn:focus{
+            color: #84c125;
+        }
+    </style>
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <h1 class="mui-title"></h1>
+        <a href="index.html" class="mui-icon mui-icon-closeempty mui-pull-right" style="color: #fff"></a>
+    </header>
+    <div class="mui-content">
+        <div class="search-part">
+            <div class="form mui-input-row ">
+                <input name="goodsname" value="" type="text" autofocus="autofocus" class="mui-input-clear" placeholder="请输入商品名" id="search">
+                <button type="submit" class="mui-icon mui-icon-search"  id="searchbtn"></button>
+            </div>
+        </div>
+
+        <div style="display: block;" class="footer_bar openwebview">
+            <ul class="warp clearfix">
+                <li >
+                    <a href="index.html" page_click_button="底部_首页">
+                        <i class="new_icon"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li class="on">
+                    <a href="search.html" page_click_button="底部_品牌">
+                        <i class="new_icon"></i>
+                        <span>搜索</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="user.html" data-url="/i/index" page_click_button="底部_我的" class="to_personalcenter personalcenternum">
+                        <i class="new_icon"></i>
+                        <span>我的</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="gouwuche.html" data-url="/shoppingcart/index" page_click_button="底部_购物车" class="new_car_center">
+                        <i class="new_icon"></i>
+                        <span>&nbsp; 购物车<strong class="mui-badge mui-badge-warning">2</strong></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="mui/js/mui.min.js"></script>
+<script>
+    function msg(msg){
+        layer.open({
+            content: msg,
+            style:'text-align: center;color:#000;',
+            time: 1
+        });
+    }
+    $('#searchbtn').click(function(){
+        var searchstr=$('#search').val();
+        if($.trim(searchstr)==''){
+            msg('请输入商品名');
+        }
+    })
+
+</script>
+</html>

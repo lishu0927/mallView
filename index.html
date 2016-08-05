@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>购物商城</title>
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	<link rel="stylesheet" type="text/css" href="mui/css/app.css">
+	<link rel="stylesheet" type="text/css" href="mui/css/mui.min.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="layer.m/need/layer.css">
+	<script src="layer.m/layer.m.js"></script>
+	<style>
+		html,body{
+			background-color:#F2F2F2;
+		}
+		.mui-content{
+			padding-bottom:80px;
+		}
+		.mui-icon{
+			font-size:19px;
+		}
+		a{
+			color:#fff;
+		}
+		.mui-icon.mui-active
+		{
+			color:#F5F5F5;
+		}
+		.search-part {
+			background:#fff;
+		}
+		.leibie{
+			display: block;
+			width: 100%;
+			background-color:#84c125;
+			padding:5px 10px;
+			color: #fff;
+			text-align: left;
+		}
+	</style>
+</head>
+<body>
+<div class="mui-content">
+	<div id="slider" class="mui-slider" >
+		<div class="mui-slider-group mui-slider-loop">
+			<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+			<div class="mui-slider-item mui-slider-item-duplicate">
+				<a href="#">
+					<img src="images/400.jpg">
+				</a>
+			</div>
+			<!-- 第一张 -->
+			<div class="mui-slider-item">
+				<a href="#">
+					<img src="images/100.jpg">
+				</a>
+			</div>
+			<!-- 第二张 -->
+			<div class="mui-slider-item">
+				<a href="#">
+					<img src="images/200.jpg">
+				</a>
+			</div>
+			<!-- 第三张 -->
+			<div class="mui-slider-item">
+				<a href="#">
+					<img src="images/300.jpg">
+				</a>
+			</div>
+			<!-- 第四张 -->
+			<div class="mui-slider-item">
+				<a href="#">
+					<img src="images/400.jpg">
+				</a>
+			</div>
+			<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+			<div class="mui-slider-item mui-slider-item-duplicate">
+				<a href="#">
+					<img src="images/100.jpg">
+				</a>
+			</div>
+		</div>
+		<div class="mui-slider-indicator">
+			<div class="mui-indicator mui-active"></div>
+			<div class="mui-indicator"></div>
+			<div class="mui-indicator"></div>
+			<div class="mui-indicator"></div>
+		</div>
+	</div>
+	<div class="search-part">
+		<div class="mui-input-row">
+			<input type="text" class="mui-input-clear" placeholder="请输入商品名" id="search">
+			<button class="mui-icon mui-icon-search" id="searchbtn"></button>
+		</div>
+	</div>
+	<ul class="mui-table-view mui-grid-view" id="feilei">
+		<li class="mui-table-view-cell mui-media mui-col-xs-3" style="padding: 0">
+			<a href="goodskind.html">
+				<img class="mui-media-object" src="images/common/fenlei1.png">
+				<div class="mui-media-body">分类</div>
+			</a>
+		</li>
+		<li class="mui-table-view-cell mui-media mui-col-xs-3">
+			<a href="#">
+				<img class="mui-media-object" src="images/common/fenlei2.png">
+				<div class="mui-media-body">团购</div>
+			</a>
+		</li>
+		<li class="mui-table-view-cell mui-media mui-col-xs-3">
+			<a href="#">
+				<img class="mui-media-object" src="images/common/fenlei3.png">
+				<div class="mui-media-body">积分兑换</div>
+			</a>
+		</li>
+		<li class="mui-table-view-cell mui-media mui-col-xs-3">
+			<a href="#">
+				<img class="mui-media-object" src="images/common/fenlei4.png">
+				<div class="mui-media-body">限时优惠</div>
+			</a>
+		</li>
+		<li class="mui-table-view-cell mui-media mui-col-xs-3">
+			<a href="#">
+				<img class="mui-media-object" src="images/common/fenlei5.png">
+				<div class="mui-media-body">品牌街</div>
+			</a>
+		</li>
+		<li class="mui-table-view-cell mui-media mui-col-xs-3">
+			<a href="user.html">
+				<img class="mui-media-object" src="images/common/fenlei7.png">
+				<div class="mui-media-body">个人中心</div>
+			</a>
+		</li>
+		<li class="mui-table-view-cell mui-media mui-col-xs-3">
+			<a href="gouwuche.html">
+				<img class="mui-media-object" src="images/common/fenlei6.png">
+				<div class="mui-media-body">购物车</div>
+			</a>
+		</li>
+
+		<li class="mui-table-view-cell mui-media mui-col-xs-3">
+			<a href="#">
+				<img class="mui-media-object" src="images/common/fenlei8.png">
+				<div class="mui-media-body">客户端</div>
+			</a>
+		</li>
+	</ul>
+	<div class="pic-part2">
+		<ul class="mui-table-view mui-grid-view">
+			<li class="mui-table-view-cell mui-media mui-col-xs-12">
+				<div class="leibie">服饰
+					<a href="goodskind.html">
+						<span class="mui-icon mui-icon-arrowthinright mui-pull-right">
+							<small>更多</small>
+						</span>
+					</a>
+				</div>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-6">
+				<a href="chanpin_xx.html">
+					<img class="mui-media-object" src="images/img/1.jpg">
+					<div class="mui-media-body">
+						<p><span class="now_price"><i>¥</i><em>169</em></span>
+							<del class="old_price"><i>¥</i>128</del></p>
+						<p>乐町连衣裙</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-6">
+				<a href="chanpin_xx.html">
+					<img class="mui-media-object" src="images/img/2.jpg">
+					<div class="mui-media-body">
+						<p><span class="now_price"><i>¥</i><em>169</em></span>
+							<del class="old_price"><i>¥</i>128</del></p>
+						<p>乐町连衣裙</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+		<ul class="mui-table-view mui-grid-view">
+			<li class="mui-table-view-cell mui-media mui-col-xs-12">
+				<div class="leibie">护肤
+					<a href="goodskind.html">
+						<span class="mui-icon mui-icon-arrowthinright mui-pull-right">
+							<small>更多</small>
+						</span>
+					</a>
+				</div>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-6">
+				<a href="chanpin_xx.html">
+					<img class="mui-media-object" src="images/img/7.jpg">
+					<div class="mui-media-body">
+						<p><span class="now_price"><i>¥</i><em>169</em></span>
+							<del class="old_price"><i>¥</i>128</del></p>
+						<p>乐町连衣裙</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-6">
+				<a href="chanpin_xx.html">
+					<img class="mui-media-object" src="images/img/8.jpg">
+					<div class="mui-media-body">
+						<p><span class="now_price"><i>¥</i><em>169</em></span>
+							<del class="old_price"><i>¥</i>128</del></p>
+						<p>乐町连衣裙</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+		<ul class="mui-table-view mui-grid-view">
+			<li class="mui-table-view-cell mui-media mui-col-xs-12">
+				<div class="leibie">鞋包
+					<a href="goodskind.html">
+						<span class="mui-icon mui-icon-arrowthinright mui-pull-right">
+							<small>更多</small>
+						</span>
+					</a>
+				</div>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-6">
+				<a href="chanpin_xx.html">
+					<img class="mui-media-object" src="images/img/13.jpg">
+					<div class="mui-media-body">
+						<p><span class="now_price"><i>¥</i><em>169</em></span>
+							<del class="old_price"><i>¥</i>128</del></p>
+						<p>乐町连衣裙</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-6">
+				<a href="chanpin_xx.html">
+					<img class="mui-media-object" src="images/img/14.jpg">
+					<div class="mui-media-body">
+						<p><span class="now_price"><i>¥</i><em>169</em></span>
+							<del class="old_price"><i>¥</i>128</del></p>
+						<p>乐町连衣裙</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div style="display: block;" class="footer_bar openwebview">
+	<ul class="warp clearfix">
+		<li class="on">
+			<a href="index.html" page_click_button="底部_首页">
+				<i class="new_icon"></i>
+				<span>首页</span>
+			</a>
+		</li>
+		<li>
+			<a href="search.html" page_click_button="底部_品牌">
+				<i class="new_icon"></i>
+				<span>搜索</span>
+			</a>
+		</li>
+		<li>
+			<a href="user.html" data-url="/i/index" page_click_button="底部_我的" class="to_personalcenter personalcenternum">
+				<i class="new_icon"></i>
+				<span>我的</span>
+			</a>
+		</li>
+		<li>
+			<a href="gouwuche.html" data-url="/shoppingcart/index" page_click_button="底部_购物车" class="new_car_center">
+				<i class="new_icon"></i>
+				<span>&nbsp; 购物车<strong class="mui-badge mui-badge-warning">2</strong></span>
+			</a>
+		</li>
+	</ul>
+</div>
+</body>
+<script src="mui/js/mui.min.js"></script>
+<script>
+	var slider = mui("#slider");
+	slider.slider({
+		interval: 2000
+	});
+	$('#search').focus(function(){
+		window.location.href="search.html";
+	})
+</script>
+</html>

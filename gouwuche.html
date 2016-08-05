@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>我的购物车</title>
+	<link rel="stylesheet" type="text/css" href="mui/css/app.css">
+	<link rel="stylesheet" type="text/css" href="mui/css/mui.min.css">
+	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="layer.m/need/layer.css">
+	<script src="layer.m/layer.m.js"></script>
+	<style>
+
+		.ls-checkbox {
+			display: inline-block;
+			width: 25px;
+			height: 25px;
+			opacity: 0;
+			z-index: 100000;
+		}
+		.ls-checkbox + label {
+			background-color: #99a1a7;
+			border: 1px solid #cacece;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 -15px 10px -12px rgba(0,0,0,0.05);
+			padding: 10px;
+			border-radius: 3px;
+			display: inline-block;
+			position: absolute;
+			top: 25px;
+			left: 0px;
+		}
+		.ls-checkbox:checked + label {
+			background-color: #fff;
+			border: 1px solid #adb8c0;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+			color: #ffb723;
+		}
+		.ls-checkbox:checked + label:after {
+			content: '\2714';
+			font-size: 18px;
+			position: absolute;
+			top: 0;
+			left: 3px;
+			color: #ffb723;
+		}
+		a{
+			color: #9d9d9d;
+		}
+		.mui-table-view {
+			 background-color: inherit;
+		}
+		.mui-table-view .mui-media{
+			overflow: hidden;
+			margin: 5px 0;
+			background: #fff;
+			padding:8px 90px 8px 130px;
+			position: relative;
+		}
+		.goos-img{
+			position: absolute;
+			left: 10px;
+		}
+		.goos-img a{
+			display: inline-block;
+		}
+		.goos-img img{
+			width: 80px;
+			height: 80px;
+			vertical-align: middle;
+		}
+		.mui-media-body{
+			width: 100%;
+			height: 80px;
+		}
+		.goods-price{
+			position: absolute;
+			right: 5px;
+			top:10px;
+			width: 55px;
+			text-align: center;
+		}
+		del{
+			color:#aeaeae;
+			font-size: 12px;
+		}
+		.c_price{
+			color: #84c125;
+			font-size: 14px;
+		}
+		.info-footer{
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			padding: 0 20px;
+			background-color: #fff;
+		}
+		.totle{
+			font-size: 20px;
+			margin: 0;
+		}
+		#totalmoney{
+			color: #84c125;
+		}
+		.mui-btn{
+			line-height: inherit;
+			display: inline;
+			padding: 8px 17px;
+		}
+		.mui-btn-primary{
+			border: 1px solid #ffb723;
+			background-color: #ffb723;
+		}
+		.mui-btn-primary:enabled:active
+		{
+			color: #fff;
+			border: 1px solid #ffb723;
+			background-color:#edaa23 ;
+		}
+		.layermbtn {
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+	<a href="javascript:history.go(-1);" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title" >我的购物车</h1>
+</header>
+<div class="mui-content">
+	<h4>购买立即加入会员</h4>
+	<ul class="mui-table-view">
+		<li class=" mui-media">
+			<div class="goos-img">
+				<input type="checkbox" class="ls-checkbox"  name="gwccheck"  id="goods1" >
+				<label for="goods1"></label>
+				<a href="chanpin_xx.html">
+					<img src="images/img/1.jpg">
+				</a>
+			</div>
+			<div class="mui-media-body">
+				<p></p>
+				<p class="mui-ellipsis">乐町连衣裙</p>
+			</div>
+			<div class="goods-price">
+				<del>¥169.00</del>
+				<span class="c_price" id="b_goods1">¥128.00</span>
+				<span class="delete">
+					<a href="javascript:;">
+						<span class="mui-icon mui-icon-trash"></span>
+					</a>
+				</span>
+			</div>
+		</li>
+		<li class=" mui-media">
+			<div class="goos-img">
+				<input type="checkbox" class="ls-checkbox"  name="gwccheck"  id="goods2" >
+				<label for="goods2"></label>
+				<a href="chanpin_xx.html">
+					<img src="images/img/1.jpg">
+				</a>
+			</div>
+			<div class="mui-media-body">
+				<p></p>
+				<p class="mui-ellipsis">乐町连衣裙</p>
+			</div>
+			<div class="goods-price">
+				<del>¥169.00</del>
+				<span class="c_price" id="b_goods2">¥128.00</span>
+				<span class="delete">
+					<a href="javascript:;">
+						<span class="mui-icon mui-icon-trash"></span>
+					</a>
+				</span>
+			</div>
+		</li>
+	</ul>
+	<div class="info-footer">
+		<div class="mui-pull-left">
+			<p class="totle">总金额：<span class="price" id="totalmoney">0.00</span></p>
+		</div>
+		<div class="mui-pull-right">
+			<a class="mui-btn mui-btn-primary"  onclick="goodls()">去结算</a>
+		</div>
+	</div>
+</div>
+</body>
+<script>
+	function msg(msg){
+		layer.open({
+			content: msg,
+			style:'text-align: center;color:#000;',
+			time: 1
+		});
+	}
+	$('.delete').click(function(){
+		layer.open({
+			content: '您确定删除此商品吗?',
+			btn: ['删除', '取消'],
+			shadeClose: false,
+			yes: function(){
+				msg('删除成功');
+				setTimeout(function(){
+					window.location.href="gouwuche.html";
+				}, 2000 );
+			},
+			no: function(){
+				msg('您选择了取消');
+
+			}
+		});
+	})
+</script>
+<script>
+	var idArray=new Array();
+	var totalMoney=0;
+	$(function(){
+		var ckArray=$('.goos-img input');
+		var priceArray=$('.c_price');
+		ckArray.each(function(index){
+			var priceStr = priceArray[index].innerHTML;
+			var price=parseFloat(priceStr.substr(1,priceStr.length - 1));
+			$(this).click(function(){
+				if(ckArray[index].checked==true){
+					totalMoney+=price;
+					idArray.push($(this).attr('id'));
+				}else {
+					totalMoney-=price;
+					for(var i = 0;i < idArray.length;i++){
+						if(idArray[i]==$(this).attr('id')){
+							idArray.splice(i,1);
+						}
+					}
+				}
+				document.getElementById('totalmoney').innerHTML=totalMoney+'.00';
+			})
+		})
+	})
+
+	function goodls(){
+		if(idArray.length==0){
+			msg('请选择商品！');
+			return ;
+		}
+		setTimeout(function(){
+			window.location.href='jiesuan.html';
+		}, 1000 );
+	}
+</script>
+
+</html>

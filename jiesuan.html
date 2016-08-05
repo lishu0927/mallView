@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<title>结算</title>
+	<link rel="stylesheet" type="text/css" href="mui/css/app.css">
+	<link rel="stylesheet" type="text/css" href="mui/css/mui.min.css">
+	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="layer.m/need/layer.css">
+	<script src="layer.m/layer.m.js"></script>
+	<style>
+		.mui-content{
+			padding-bottom: 50px;
+		}
+		.mui-table-view .mui-media{
+			padding: 5px 15px;
+		}
+		.mui-content>.mui-table-view:first-child {
+			 margin-top: 0;
+		}
+		.mui-table-view{
+			margin-bottom: 10px;
+		}
+		.mui-media a{
+			position: absolute;
+			left: 0;
+			padding: 5px;
+		}
+		.mui-media img{
+			width: 80px;
+
+		}
+		a{
+			color: #8f8f94;
+		}
+		.mui-table-view-radio .mui-table-view-cell .mui-navigate-right:after{
+			color: #ffb723;
+		}
+		p {
+			margin: 8px 0 2px 0;
+		}
+		.mui-media{
+			border-bottom: 1px dashed #ddd;
+		}
+		.mui-media:last-child{
+			border-bottom: 0;
+		}
+		.mui-media>p{
+			padding-left: 15px;
+		}
+		.mui-media-body{
+			padding-left: 90px;
+			height: 90px;
+		}
+		.c_price{
+			color: #ffb723;
+		}
+		.mui-btn-block {
+			padding: 6px;
+		}
+		.mui-table-view-cell>a:not(.mui-btn) {
+			font-size: 14px;
+			color: #8f8f94;
+		}
+		.totals{
+			margin: 5px 10px 10px 0;
+			font-size: 20px;
+			text-align: right;
+			color:red;
+		}
+	</style>
+</head>
+<body >
+<header class="mui-bar mui-bar-nav">
+	<h1 class="mui-title">确认订单</h1>
+	<a href="index.html"><span class="mui-icon mui-icon-home mui-pull-right"></span></a>
+</header>
+<div class="mui-content" >
+	<ul class="mui-table-view ">
+		<li class="mui-media addressli">
+			<h4>收货地址
+				<span class="mui-pull-right">[<a href="javascript:void(0);" onclick="window.location.href='useraddress.html'"  style="color: red;position: relative;font-size: 14px" >设置地址</a>]</span>
+			</h4>
+			<div class="addinfo">
+				<p><span class="name" id="<{$uaddress.name}>">武汉市  &nbsp;&nbsp; &nbsp;&nbsp; </span> <span class="phone" id="15027100106"></span> </p>
+				<p>江汉经济开发区</p>
+				<p>送货时间 &nbsp;&nbsp; 不限</p>
+			</div>
+		</li>
+	</ul>
+  	<ul class="mui-table-view ">
+		<li class="mui-media">
+			<a href="chanpin_xx.html">
+				<img src="images/img/1.jpg">
+			</a>
+			<div class="mui-media-body">
+				<p class="mui-ellipsis ids_p" id="goods1">乐町连衣裙</p>
+				<p>金额<span class="mui-pull-right c_price">¥128.00</span></p>
+				<p class="">运费<span class="mui-pull-right c_price">¥0.00</span></p>
+			</div>
+		</li>
+		<li class="mui-media">
+			<a href="chanpin_xx.html">
+				<img src="images/img/1.jpg">
+			</a>
+			<div class="mui-media-body">
+				<p class="mui-ellipsis ids_p" id="goods2">乐町连衣裙</p>
+				<p>金额<span class="mui-pull-right c_price">¥128.00</span></p>
+				<p class="">运费<span class="mui-pull-right c_price">¥0.00</span></p>
+			</div>
+		</li>
+  	</ul>
+	<ul class="mui-table-view">
+		<li class="mui-media">
+			<h4>付款方式</h4>
+			<ul class=" mui-table-view-radio"  style="padding-left:0px" >
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						微信支付
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-selected">
+					<a class="mui-navigate-right">
+						其他方式支付
+					</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+
+	<p class="totals">实付款：<span class="price">¥128.00</span></p>
+	<a class="mui-btn mui-btn-success mui-btn-block " href="yhm_jiesuan.html" >提交订单</a>
+</div>
+<script src="mui/js/mui.min.js"></script>
+<script type="text/javascript">
+	function msg(msg){
+		layer.open({
+		content: msg,
+		style:'text-align: center;color:#000;',
+		time: 2
+		});
+	}
+
+	var phone=$('.phone').attr('id');
+	var name=$('.name').attr('id');
+	if(phone==''&&name==''){
+		$('.addinfo').html('请填写收货地址');
+	}else{
+		var mphone=phone.substr(3,4);
+		$('.phone').html(phone.replace(mphone,'***'));
+	}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>我的订单</title>
+    <link rel="stylesheet" type="text/css" href="mui/css/app.css">
+    <link rel="stylesheet" type="text/css" href="mui/css/mui.min.css">
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <style>
+        body,.mui-content{
+            background-color: #fff;
+        }
+        .tick{
+            text-align: center;
+        }
+        .tickimg{
+            width: 60px;
+            border-radius: 50%;
+            height: 57px;
+            background-color: #0BB20C;
+            margin: 20px auto 10px ;
+            position: relative;
+
+        }
+        .tickimg:after{
+            position: absolute;
+            content: '7';
+            font-size: 48px;
+            font-weight: bold;
+            color: #fff;
+            top: 15px;
+            left: 20px;
+            transform: rotateZ(-300deg) rotateX(-180deg) ;
+            -webkit-transform:rotateZ(-300deg) rotateX(-180deg);
+        }
+        .totalprice{
+            color:red;
+            font-size:28px;
+            font-weight: 700;
+        }
+        strong {
+              font-weight: 700;
+              width: 60px;
+              margin: 5px;
+              display: inline-block;
+              text-align: right;
+              color: #929292;
+          }
+        .mui-table-view{
+            margin: 10px 0 20px 0;
+        }
+        .mui-table-view .mui-media-body {
+            color: #929292;
+        }
+        .mui-btn{
+            width: 45%;
+            margin-left: 3%;
+        }
+        .mui-btn-primary{
+            border: 1px solid #ddd;
+            background-color: #ddd;
+        }
+        .mui-btn-primary:enabled:active
+        {
+            color: #fff;
+            border: 1px solid #cecece;
+            background-color: #b6b6b6;
+        }
+    </style>
+</head>
+<body>
+<div class="mui-content">
+    <div class="tick">
+        <div class="tickimg"></div>
+        <p>购买成功</p>
+        <h4>总金额:&nbsp;&nbsp;<span class="totalprice">¥128.00</span></h4>
+    </div>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell mui-media">
+            <a href="javascript:;">
+                <div class="mui-media-body">
+                    <strong>订单号:</strong>27162763276748211
+                    <div class='mui-ellipsis'><strong>商品:</strong>乐町连衣裙</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <a type="button" class="mui-btn mui-btn-primary" href="morerecord.html">查看订单</a>
+    <a type="button" class="mui-btn mui-btn-success" href="index.html">继续购物</a>
+</div>
+</body>
+</html>
